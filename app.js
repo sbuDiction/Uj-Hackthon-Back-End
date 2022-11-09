@@ -3,10 +3,21 @@ import cors from 'cors';
 
 
 
+import { projectManagementRoute } from './routes/projectManagement.routes.js';
+import { taskManagementRoute } from './routes/taskManagement.routes.js';
+import { projectMemberRoute } from './routes/projectMember.routes.js';
+
+
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(
+    projectManagementRoute,
+    taskManagementRoute,
+    projectMemberRoute
+)
 
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
