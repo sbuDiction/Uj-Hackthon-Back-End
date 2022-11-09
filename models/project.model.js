@@ -1,9 +1,10 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../database/init";
+import { sequelize } from "../database/init.js";
 
-export const User = sequelize.define('project',{
-name:DataTypes.TEXT, 
-role:DataTypes.TEXT,
-team_leader:DataTypes.BOOLEAN, 
-admin:DataTypes.BOOLEAN 
-});
+export const Project = sequelize.define('projects', {
+    user_id: DataTypes.INTEGER,
+    project_name: DataTypes.TEXT,
+    start_date: DataTypes.TEXT,
+    end_date: DataTypes.TEXT
+
+},{ timestamps: false, createdAt: false, updatedAt: false });

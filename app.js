@@ -6,10 +6,13 @@ import cors from 'cors';
 import { projectManagementRoute } from './routes/projectManagement.routes.js';
 import { taskManagementRoute } from './routes/taskManagement.routes.js';
 import { projectMemberRoute } from './routes/projectMember.routes.js';
+import { sequelize } from './database/init.js';
 
 
 
 const app = express();
+
+sequelize.sync().then(() => console.log('db ready'))
 
 app.use(cors());
 app.use(express.json());
