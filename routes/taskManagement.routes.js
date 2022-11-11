@@ -4,6 +4,8 @@ import { createSubTask } from '../controllers/taskManagement/createSubTask.contr
 import { removeTask } from '../controllers/taskManagement/removeTask.controller.js';
 import { assignTask } from '../controllers/taskManagement/assignTask.controller.js';
 import { grantTaskAccess } from '../controllers/taskManagement/grantTaskAccess.controller.js';
+import { viewTask } from '../controllers/taskManagement/viewTask.controller.js';
+import { viewSubTask } from '../controllers/taskManagement/viewSubTask.controller.js';
 
 const taskManagementRoute = express.Router();
 
@@ -13,6 +15,8 @@ taskManagementRoute.post('/api/create/sub/task', createSubTask);
 taskManagementRoute.post('/api/remove/task', removeTask);
 taskManagementRoute.post('/api/assign/task', assignTask);
 taskManagementRoute.post('/api/grant/task/access', grantTaskAccess);
+taskManagementRoute.get('/api/view/task/:project_id', viewTask);
+taskManagementRoute.get('/api/view/sub/task/:sub_task_id', viewSubTask);
 
 
 export {

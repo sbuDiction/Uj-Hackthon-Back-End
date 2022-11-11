@@ -13,3 +13,30 @@ export const viewMembers = async (req, res, next) => {
         })
     })
 }
+
+export const viewMember = async (req, res) => {
+    console.log('viewing');
+    await User.findAll({
+        where: {
+            id: 3
+        }
+    }).then(member => {
+        res.json({
+            member
+        })
+    })
+}
+
+export const viewUserDetails = async (req, res) => {
+    const { userId } = req.params;
+    const id = Number(userId);
+    await User.findAll({
+        where: {
+            id: id
+        }
+    }).then(member => {
+        res.json({
+            member
+        })
+    })
+}
