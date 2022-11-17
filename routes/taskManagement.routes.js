@@ -16,7 +16,7 @@ taskManagementRoute.post('/api/remove/task', removeTask);
 taskManagementRoute.post('/api/assign/task', assignTask);
 taskManagementRoute.post('/api/grant/task/access', grantTaskAccess);
 taskManagementRoute.get('/api/view/task/:project_id', viewTask);
-taskManagementRoute.get('/api/view/sub/task/:sub_task_id', viewSubTask);
+taskManagementRoute.get('/api/view/sub/task/:userId', viewSubTask);
 
 
 export {
