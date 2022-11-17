@@ -7,6 +7,9 @@ import { projectManagementRoute } from './routes/projectManagement.routes.js';
 import { taskManagementRoute } from './routes/taskManagement.routes.js';
 import { projectMemberRoute } from './routes/projectMember.routes.js';
 import { sequelize } from './database/init.js';
+import { authRouter } from './routes/auth.routes.js';
+import { createAccountRouter } from './routes/createAccount.routes.js';
+import { userRouter } from './routes/user.routes.js';
 
 
 
@@ -19,7 +22,10 @@ app.use(express.json());
 app.use(
     projectManagementRoute,
     taskManagementRoute,
-    projectMemberRoute
+    projectMemberRoute,
+    authRouter,
+    createAccountRouter,
+    userRouter
 )
 
 app.use((err, req, res, next) => {
