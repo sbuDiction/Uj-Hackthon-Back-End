@@ -1,12 +1,25 @@
 import { SubTask } from "../../models/subtask.model.js";
 
 export const viewSubTask = async (req, res, next) => {
-    const { userId } = req.params;
+    const { taskId } = req.params;
+    console.log(req.params);
     await SubTask.findAll({
         where: {
-            user_id: userId
+            task_id: taskId
         }
-    }).then(subTasks => {
-        res.json({ subTasks })
+    }).then(subtasks => {
+        res.json({ subtasks })
+    })
+}
+
+export const viewSubtaskById = async (req, res, next) => {
+    const { subtaskId } = req.params;
+    console.log(req.params);
+    await SubTask.findAll({
+        where: {
+            id: subtaskId
+        }
+    }).then(subtasks => {
+        res.json({ subtasks })
     })
 }
