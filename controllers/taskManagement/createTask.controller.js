@@ -9,12 +9,14 @@ export const createTask = async (req, res, next) => {
         if (!task) await Task.create(req.body).then(() => {
             res.json({
                 message: 'Task has been successfuly created',
-                isCreated: true
+                isCreated: true,
+                alertType: 'green-400'
             })
         })
         else res.json({
             message: 'Task already exists try creating a new task',
-            isCreated: false
+            isCreated: false,
+            alertType: 'blue-400'
         })
     })
 
