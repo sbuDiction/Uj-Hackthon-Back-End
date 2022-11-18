@@ -9,7 +9,7 @@ export const viewTeamLeaders = async (req, res, next) => {
         }
     }).then(members => {
         res.json({
-            members
+            teamLeaders: members
         })
     })
 }
