@@ -8,6 +8,7 @@ export const auth = async (req, res, next) => {
     const { userId } = AuthenticateToken(token);
     res.json({
         status: 'Token verified',
-        client_id: userId
+        client_id: userId,
+        isAuthenticated: true
     })
 }
