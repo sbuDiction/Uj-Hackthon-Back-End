@@ -10,6 +10,7 @@ import { sequelize } from './database/init.js';
 import { authRouter } from './routes/auth.routes.js';
 import { createAccountRouter } from './routes/createAccount.routes.js';
 import { userRouter } from './routes/user.routes.js';
+import { usersRouter } from './routes/users.routes.js';
 
 
 
@@ -25,7 +26,8 @@ app.use(
     projectMemberRoute,
     authRouter,
     createAccountRouter,
-    userRouter
+    userRouter,
+    usersRouter
 )
 
 app.use((err, req, res, next) => {
