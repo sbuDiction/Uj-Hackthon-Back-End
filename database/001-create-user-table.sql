@@ -1,7 +1,8 @@
 CREATE TABLE users(
 id SERIAL PRIMARY KEY,
-name TEXT, 
-role TEXT,
-team_leader BOOLEAN, 
+access_number TEXT, 
+name TEXT,
+student BOOLEAN, 
+researcher BOOLEAN, 
 admin BOOLEAN 
 );
