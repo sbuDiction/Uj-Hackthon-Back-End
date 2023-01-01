@@ -18,7 +18,6 @@ const app = express();
 
 sequelize.sync().then(() => console.log('db ready'))
 
-app.use(cors());
 app.use(express.json());
 app.use(
     projectManagementRoute,
@@ -28,8 +27,9 @@ app.use(
     createAccountRouter,
     userRouter,
     usersRouter
-)
-
+    )
+    
+app.use(cors());
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.send({ error: err.message });
